@@ -1,0 +1,28 @@
+Script started on Mon 08 Jun 2020 02:42:25 PM WIB
+$ PS1="$ "
+$ echo $GitHubUser
+titusdirgantoro
+$ echo $PSTAMP
+TMP1="$(date +%y%m%d-%H%M%S)"; TMP2="$(echo $TMP1-$GitHubUser-${PWD##*/}|sha1sum|cut -c1-4)"; echo "$TMP1-$TMP2-${PWD##*/}/> ";
+$ PS1="\$(eval \$PSTAMP)"
+200608-144306-bdd4-UAS/> ls -F
+0000-mypub.txt  0001-mytest.txt  0002-mytest.txt.asc  0003-CEK-PAS0.txt
+200608-144313-f09e-UAS/> sha1sum 0000-mypub.txt 0001-mytest.txt 0002-mytest.txt.asc > SHA1SUM
+200608-144321-57a9-UAS/> sha1sum -c SHA1SUM
+0000-mypub.txt: OK
+0001-mytest.txt: OK
+0002-mytest.txt.asc: OK
+200608-144332-3a21-UAS/> gpg2 -sb -a SHA1SUM
+
+You need a passphrase to unlock the secret key for
+user: "Titus Dirgantoro (OS201 C 1806191755 titusdirgantoro Titus Dirgantoro) <titusdirgantoro@gmail.com>"
+4096-bit RSA key, ID BDD0326C, created 2020-05-29
+
+200608-144344-1160-UAS/> gpg2 --verify SHA1SUM.asc
+gpg: assuming signed data in 'SHA1SUM'
+gpg: Signature made Mon 08 Jun 2020 02:43:44 PM WIB using RSA key ID BDD0326C
+gpg: Good signature from "Titus Dirgantoro (OS201 C 1806191755 titusdirgantoro Titus Dirgantoro) <titusdirgantoro@gmail.com>" [ultimate]
+200608-144350-cdd7-UAS/> exit
+exit
+
+Script done on Mon 08 Jun 2020 02:43:58 PM WIB
