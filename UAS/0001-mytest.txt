@@ -23,4 +23,3 @@ sub   4096R/44170902 2020-02-13 [expires: 2021-02-12]
 200531-133549-1596-titus.dirgantoro/> exit
 exit
 
-Script done on Sun 31 May 2020 01:35:56 PM WIB
